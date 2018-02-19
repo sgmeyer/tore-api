@@ -4,7 +4,7 @@ clean :
 	rm -rf ./dist
 
 build-app :
-	CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o ./dist/main .
+	CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o ./dist/main ./src
 
 build-image :
 	docker build -t example-scratch -f Dockerfile .
